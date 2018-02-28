@@ -13,6 +13,6 @@ RUN python manage.py migrate
 ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
 
-EXPOSE 8000
+EXPOSE 8800
 
 CMD ["/bin/bash", "/start.sh"]
