@@ -2,7 +2,7 @@ FROM python:2.7-onbuild
 MAINTAINER Emmanuel Bretelle <chantra@fb.com>
 
 # Assuming the default WAN and LAN interface are eth0 and eth1
-ENV ATCD_WAN=eth0 ATCD_LAN=eth1 ATCD_BURST_SIZE=12000 ATCD_MODE=secure
+ENV ATCD_WAN=eth0 ATCD_LAN=eth1 ATCD_BURST_SIZE=12000 ATCD_MODE=secure ATCD_LISTEN_PORT=9090
 RUN apt-get update && apt-get install -y iptables rsyslog
 RUN django-admin startproject atcui . || true
 RUN cp -f atcui_tpl/* atcui/
